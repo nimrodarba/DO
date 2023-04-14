@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML DINAMICO</title>
+</head>
+<body>
+    <h1>1. USO DE BOTONES</h1>
+    <input type="text" placeholder="Ingrese un numero" id="t1" name="tt1">
+    <input type="text" placeholder="Ingrese un numero" id="t2" name="tt2">
+    <label for="respu">= <%= resu %> </label>
+    <p>
+    <input type="button" value="SUMAR" id="b1" onclick="location.href='/sum?t1='+document.getElementById('t1').value+'&t2='+document.getElementById('t2').value+''">
+    <input type="button" value="MULTIPLICAR" id="b2" onclick="location.href='/mul?t1='+document.getElementById('t1').value+'&t2='+document.getElementById('t2').value+''">
+    
+    <h1>2. CAMBIO DE MENSAJES</h1>       
+    <% if (v==="Mostrar") { %>
+        <a href="/?va=Ocultar" ><%= v %></a> 
+        <div ></div>
+    <% } else if (v==="Ocultar") { %>
+        <a href="/?va=Mostrar" ><%= v %></a> 
+        <div >"Vale más hacer y arrepentirse que no hacer y arrepentirse"</div>           
+    <% } else { %> 
+        <%#Comentario: Aqui ingresa solo la primera vez%>
+        <a href="/?va=Ocultar" >Mostrar</a> 
+    <% } %>
+    
+</body>
+</html>
